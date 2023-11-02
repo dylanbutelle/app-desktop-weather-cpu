@@ -28,4 +28,16 @@ module.exports = {
       config: {},
     },
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'dylanbutelle',
+          name: 'app-desktop-weather-cpu'
+        },
+        prerelease: true
+      }
+    }
+  ]
 };

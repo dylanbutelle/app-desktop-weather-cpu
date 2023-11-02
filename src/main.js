@@ -1,8 +1,8 @@
-console.log("Hello from Electron 👋");
-
 const { app, BrowserWindow, ipcMain } = require("electron");
 const { Notification, shell } = require('electron');
 const path = require("path");
+const { updateElectronApp } = require('update-electron-app');
+updateElectronApp(); // additional configuration options available
 
 const os = require("os-utils");
 const os_node = require("node:os");
