@@ -1,5 +1,4 @@
-const { app, BrowserWindow, ipcMain, autoUpdater, dialog, } = require("electron");
-const { Notification, shell } = require('electron');
+const { app, BrowserWindow, ipcMain, autoUpdater, dialog, Notification, shell } = require("electron");
 const path = require("path");
 const { updateElectronApp } = require('update-electron-app');
 
@@ -73,12 +72,10 @@ app.whenReady().then(() => {
     }
   });
   ipcMain.handle('showNotification', (event, data) => {
-    const notification = new Notification({
+    new Notification({
       title: data.title,
       body: data.body,
-    });
-
-    notification.show();
+    }).show();
   });
   ipcMain.handle('openParameters', () => {
     shell.openExternal('x-apple.systempreferences:com.apple.preference.notifications').then(r => console.log(r));
