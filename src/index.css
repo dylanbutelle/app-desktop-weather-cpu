@@ -1,7 +1,70 @@
 body {
+  background: rgb(95,13,142);
+  background: linear-gradient(90deg, rgba(95,13,142,1) 0%, rgba(143,38,180,1) 100%);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
+}
+
+#title {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#title h1 {
+  color: white;
+  padding-right: 20px;
+}
+
+#title img {
+  animation: moveUpDown 1s linear infinite;
+  height: 50px;
+  width: 50px;
+}
+
+#temp {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+#temp label {
+  color: white;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+#temp input {
+  border: 1px solid white;
+  border-radius: 10px;
+  height: 30px;
+  text-align: center;
+  width: 40px;
+}
+
+.help {
+  color: #d3d3d3;
+  font-size: 8px;
+}
+
+#open-notifications {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-10px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
 }

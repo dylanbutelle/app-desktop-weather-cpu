@@ -19,12 +19,13 @@ const createWeatherChart = (container, data) => {
             {
                 label: 'Température extérieures (°C)',
                 data: tempData,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgb(255,255,255)',
+                backgroundColor: 'rgba(255,243,243,0.2)',
                 pointRadius: 1,
-                pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointBackgroundColor: 'rgb(244,255,255)',
                 fill: true,
-                borderWidth: 1
+                borderWidth: 1,
+                color: 'rgb(255,255,255)',
             },
         ],
     };
@@ -33,8 +34,29 @@ const createWeatherChart = (container, data) => {
         type: 'line',
         data: temperatureData,
         options: {
-            responsive: true,
-        },
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: 'white' // Couleur des étiquettes de légende
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        color: 'white' // Couleur du texte de l'axe x
+                    },
+                },
+                y: {
+                    title: {
+                        display: true,
+                        color: 'white' // Couleur du texte de l'axe y
+                    },
+                }
+            }
+        }
     });
 };
 

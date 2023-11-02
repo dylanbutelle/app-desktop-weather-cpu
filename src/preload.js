@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld("versions", {
   ping: () => ipcRenderer.invoke("ping"),
   info: () => ipcRenderer.invoke("info"),
   getCpuTemperature: () => ipcRenderer.invoke("getCpuTemperature"),
-  showNotification: (title, body) => ipcRenderer.invoke("showNotification", { title, body })
+  showNotification: (title, body) => ipcRenderer.invoke("showNotification", { title, body }),
+  openParameters: () => ipcRenderer.invoke("openParameters")
   //Nous pouvons exposer des variables en plus des fonctions
 });

@@ -1,7 +1,7 @@
 console.log("Hello from Electron 👋");
 
 const { app, BrowserWindow, ipcMain } = require("electron");
-const { Notification } = require('electron');
+const { Notification, shell } = require('electron');
 const path = require("path");
 
 const os = require("os-utils");
@@ -25,9 +25,6 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "index.html"));
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
@@ -77,6 +74,9 @@ app.whenReady().then(() => {
     });
 
     notification.show();
+  });
+  ipcMain.handle('openParameters', () => {
+    shell.openExternal('x-apple.systempreferences:com.apple.preference.notifications').then(r => console.log(r));
   });
 });
 

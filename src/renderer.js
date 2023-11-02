@@ -8,10 +8,15 @@ const weather = document.getElementById('weather');
 const cpu = document.getElementById('cpu');
 const temperatureChart = createChart(cpu);
 const input = document.getElementsByTagName('input')[0];
+const help = document.getElementById('open-notifications');
 let value = input.value;
 
 input.addEventListener('keyup', () => {
   value = input.value
+})
+
+help.addEventListener('click', () => {
+  window.versions.openParameters().then(r => console.log(r));
 })
 
 const addDataPoint = async () => {

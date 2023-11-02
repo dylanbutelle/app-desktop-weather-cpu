@@ -2,13 +2,21 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Weather x CPU : The duel</title>
     <link rel="stylesheet" href="index.css" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
   </head>
   <body>
     <div id="root">
-      <input type="number" value="70"/>
+      <div id="title">
+        <h1>Weather x CPU : The duel</h1>
+        <img src="../images/icons/gants-de-boxe.png">
+      </div>
+      <div id="temp">
+        <label for="cpu-temp">Pour quel dépassement de température souhaitez-vous être notifié ?</label>
+        <input id="cpu-temp" type="number" value="70"/>
+        <p class="help">Assurez-vous d'avoir <span id="open-notifications">activer les notifications</span> pour activer cette fonctionnalité.</p>
+      </div>
       <div id="weather"></div>
       <div id="cpu"></div>
     </div>

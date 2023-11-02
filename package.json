@@ -1,6 +1,6 @@
 {
-  "name": "electrongeo",
-  "productName": "electrongeo",
+  "name": "app-desktop-weather-cpu",
+  "productName": "Equimeteo v2",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/main.js",
@@ -14,8 +14,8 @@
   },
   "keywords": [],
   "author": {
-    "name": "Christophe Delobel",
-    "email": "cdelobel.ext@simplon.co"
+    "name": "Dylan Butelle",
+    "email": "butelledylan@gmail.com"
   },
   "license": "MIT",
   "dependencies": {

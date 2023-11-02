@@ -11,10 +11,10 @@ const createChart = (container) => {
             {
                 label: 'Température CPU (°C)',
                 data: [],
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgb(255,255,255)',
+                backgroundColor: 'rgba(255,243,243,0.2)',
                 pointRadius: 1,
-                pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointBackgroundColor: 'rgb(244,255,255)',
                 fill: true,
                 borderWidth: 1
             },
@@ -26,12 +26,30 @@ const createChart = (container) => {
         data: temperatureData,
         options: {
             responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: 'white' // Couleur des étiquettes de légende
+                    }
+                }
+            },
             scales: {
+                x: {
+                    title: {
+                        display: true,
+                        color: 'white' // Couleur du texte de l'axe x
+                    },
+                },
                 y: {
                     min: 0, // Valeur minimale de l'axe Y
                     max: 100, // Valeur maximale de l'axe Y
-                },
-            },
+                    title: {
+                        display: true,
+                        color: 'white' // Couleur du texte de l'axe y
+                    },
+                }
+            }
         },
     });
 };
