@@ -1,7 +1,12 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, ipcMain, autoUpdater, dialog, } = require("electron");
 const { Notification, shell } = require('electron');
 const path = require("path");
 const { updateElectronApp } = require('update-electron-app');
+
+setInterval(() => {
+  autoUpdater.checkForUpdates();
+}, 6000);
+
 updateElectronApp(); // additional configuration options available
 
 const os = require("os-utils");
@@ -77,6 +82,21 @@ app.whenReady().then(() => {
   });
   ipcMain.handle('openParameters', () => {
     shell.openExternal('x-apple.systempreferences:com.apple.preference.notifications').then(r => console.log(r));
+  });
+});
+
+autoUpdater.on("update-downloaded", (event, releaseNotes, releaseName) => {
+  const dialogOpts = {
+    type: "info",
+    buttons: ["Restart", "Later"],
+    title: "Application Update",
+    message: process.platform === "darwin" ? releaseNotes : releaseName,
+    detail:
+        "A new version has been downloaded. Restart the application to apply the updates.",
+  };
+
+  dialog.showMessageBox(dialogOpts).then((returnValue) => {
+    if (returnValue.response === 0) autoUpdater.quitAndInstall();
   });
 });
 

@@ -1,7 +1,7 @@
 {
   "name": "app-desktop-weather-cpu",
   "productName": "Equimeteo v2",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "My Electron application description",
   "main": "src/main.js",
   "scripts": {
@@ -19,6 +19,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@electron-forge/publisher-github": "^6.4.2",
     "chart.js": "^4.4.0",
     "electron-notification": "^1.0.0",
     "electron-squirrel-startup": "^1.0.0",

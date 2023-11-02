@@ -36,7 +36,8 @@ module.exports = {
           owner: 'dylanbutelle',
           name: 'app-desktop-weather-cpu'
         },
-        prerelease: true
+        authToken: "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",
+        prerelease: false
       }
     }
   ]
